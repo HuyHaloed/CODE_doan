@@ -1,0 +1,55 @@
+.header {
+  position: fixed;
+  width: 100%;
+  min-height: 65px;
+  top: 0;
+  left: 0;
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 6px 0 rgba(74, 74, 78, 0.2);
+
+  z-index: 10000;
+}
+
+.shopName {
+  font-family: "Playwrite GB S", cursive;
+}
+.logoButton {
+  color: #15b392;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2.4rem;
+}
+
+.title {
+  color: #1d1d1d;
+  font-size: 18px;
+  margin-left: 12px;
+  font-weight: 450;
+}
+
+.logoutBtn {
+  background-color: #15b392;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.logoutBtn:hover {
+  background-color: #12977a;
+}

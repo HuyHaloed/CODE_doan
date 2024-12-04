@@ -1,0 +1,50 @@
+.wrapper {
+  height: 54px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputField {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 1.06rem;
+  border-radius: 1.5rem;
+  border: 1px solid #dedede;
+  padding: 18px 18px;
+  transition: 0.2s ease;
+  background-color: #f8f8f8;
+  color: #575757;
+}
+
+.inputField:focus {
+  border-color: #a5a5a5;
+}
+
+.inputField::placeholder {
+  color: #8e8e8e;
+  font-size: 0.9rem;
+}
+
+.wrapper .icon {
+  position: absolute;
+  top: 50%;
+  left: 0.93rem;
+  transform: translateY(-50%);
+  color: #ccc;
+  transition: 0.2s ease;
+}
+
+.wrapper .eyeIcon {
+  position: absolute;
+  top: 50%;
+  right: 0.93rem;
+  transform: translateY(-50%);
+  color: #9a9a9a;
+  cursor: pointer;
+  font-size: 1.25rem;
+}

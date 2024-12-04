@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.button {
+  display: flex;
+  gap: 0.8rem;
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.55rem 0;
+  border-radius: 0.8rem;
+  align-items: center;
+  justify-content: center;
+  background: #fbfbfb;
+  border: 1px solid #dedede;
+  transition: 0.3s ease;
+  color: #575757;
+}
+
+.button:hover {
+  border-color: #c0bfbf;
+  background: #f5f5f5;
+}
+
+.icon {
+  width: 32px;
+}

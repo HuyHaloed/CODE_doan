@@ -1,0 +1,64 @@
+.container {
+  margin-bottom: 20px;
+}
+
+.menuHeader {
+  font-size: 14px;
+  font-weight: 600;
+  color: #999;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menuList {
+  padding: 5px 0;
+  list-style: none;
+  margin: 0;
+  line-height: 24px;
+  transition: transform 2s ease;
+}
+
+.menuList.closed {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.menuList.open {
+  max-height: 500px;
+}
+
+.menuList li {
+  font-size: 14px;
+  padding-left: 8px;
+  margin: 5px 0;
+  cursor: pointer;
+  color: #333;
+}
+
+.menuList li:hover {
+  color: #15b392;
+}
+
+.menuList li a {
+  text-decoration: none;
+  font-size: 14px;
+  padding-left: 8px;
+  margin: 5px 0;
+  cursor: pointer;
+  color: #333;
+}
+
+.menuList li a:hover {
+  color: #15b392;
+}
+
+.iconify {
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.iconify:hover {
+  color: #15b392;
+}

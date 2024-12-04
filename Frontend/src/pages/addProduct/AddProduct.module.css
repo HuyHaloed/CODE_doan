@@ -1,0 +1,372 @@
+.container {
+  display: flex;
+  padding: 20px;
+  padding-top: 80px;
+  position: relative;
+}
+
+.suggestionPanel {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  width: 400px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-top: #15b392 solid 4px;
+  border-radius: 6px;
+  margin-right: 20px;
+  align-self: flex-start;
+  z-index: 1000;
+}
+
+.suggestionTitle {
+  display: flex;
+  background-color: rgb(21, 179, 146, 0.1);
+  position: relative;
+  padding: 20px;
+  font-weight: 450;
+  align-items: center;
+}
+
+.suggestionTitle p {
+  font-size: 16px;
+}
+
+.taskList {
+  padding: 16px 0;
+}
+
+.taskItem {
+  display: flex;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 450;
+  align-items: center;
+}
+
+.taskItem p {
+  padding-left: 8px;
+}
+
+.check {
+  flex-shrink: 0;
+  color: #15b392;
+}
+
+.uncheck {
+  flex-shrink: 0;
+  color: #ccc;
+}
+
+.check {
+  flex-shrink: 0;
+  color: #15b392;
+}
+
+.taskItem:hover {
+  background-color: rgb(21, 179, 146, 0.05);
+}
+
+.formPanel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 415px;
+}
+
+.basicForm {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.imageSection {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.label {
+  flex: 0.4;
+  display: flex;
+  align-items: center;
+  font-weight: 450;
+  margin-left: 10px;
+  margin-right: 15px;
+}
+
+.label span {
+  color: #15b392;
+  margin-right: 4px;
+}
+
+.imageButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border: 2px dashed #ccc;
+  border-radius: 4px;
+  text-align: center;
+  margin-right: 16px;
+}
+
+.imageButton:hover {
+  border-color: #15b392;
+  background-color: rgb(21, 179, 146, 0.03);
+  cursor: pointer;
+}
+
+.imageWrapper {
+  flex: 2.3;
+  display: flex;
+  align-items: center;
+}
+
+.imageButton p {
+  font-size: 12px;
+  color: #15b392;
+}
+
+.imageDesc {
+  flex: 1.8;
+  color: #999;
+  font-size: 12px;
+  font-weight: 450;
+  line-height: 14px;
+}
+
+.addIcon {
+  font-size: 28px;
+  color: #15b392;
+}
+
+.productSection {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 20px;
+}
+
+.productName {
+  flex: 2.3;
+  /* margin-left: 12px; */
+  position: relative;
+  width: 100%;
+}
+
+.nameInput {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: #e5e5e5 1px solid;
+  border-radius: 4px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.nameInput:focus {
+  border: #b7b7b7 1px solid;
+}
+
+.inputCounter {
+  position: absolute;
+  right: 10px;
+  bottom: 50%;
+  transform: translateY(50%);
+  font-size: 12px;
+  color: #888;
+}
+
+.nameText {
+  width: 100%;
+  padding: 8px 10px;
+  height: 150px;
+  font-size: 14px;
+  border: #e5e5e5 1px solid;
+  border-radius: 4px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.nameText:focus {
+  border: #b7b7b7 1px solid;
+}
+
+.textCounter {
+  position: absolute;
+  bottom: -15px;
+  right: 10px;
+  font-size: 12px;
+  color: #888;
+}
+.warning {
+  color: #15b392;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  margin: 40px 0;
+}
+
+.detailForm {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.detailContainer {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  padding: 20px;
+  gap: 15px;
+}
+
+.detailSide {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.detailLabel {
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+}
+
+.input,
+.selectBox {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.input::placeholder {
+  color: #999;
+}
+
+.input:hover,
+.input:focus,
+.selectBox:hover,
+.selectBox:focus {
+  border-color: #b7b7b7;
+  outline: none;
+}
+
+.selectBox {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='gray'%3E%3Cpath d='M5.23 7.21a.75.75 0 011.06.02L10 10.943l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0l-4.24-4.25a.75.75 0 01.02-1.06z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+
+.selectBox:invalid {
+  color: #999;
+}
+
+.selectBox option {
+  color: #333;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(30%);
+}
+
+input[type="date"] {
+  padding-right: 30px;
+}
+
+.sellForm {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.sellContainer {
+  padding: 20px 0;
+}
+
+.sellWrapper {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 20px;
+}
+
+.productPrice {
+  flex: 2;
+}
+
+.priceInput {
+  width: 40%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: #e5e5e5 1px solid;
+  border-radius: 4px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.saveButton,
+.saveShowButton {
+  background-color: #15b392;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.cancelButton {
+  background-color: white;
+  color: #333;
+  padding: 10px 20px;
+  border: #b7b7b7 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.saveButton:hover,
+.saveShowButton:hover {
+  background-color: #12977a;
+}
+
+.cancelButton:hover {
+  background-color: rgb(245, 245, 245);
+}

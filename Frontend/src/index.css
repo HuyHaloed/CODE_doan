@@ -1,0 +1,36 @@
+/* Importing Google Fonts - Montserrat */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+#root {
+  width: 100%;
+}
+
+:root {
+  --theme-color: rgb(15, 118, 91);
+  --button-color: linear-gradient(135deg, #ff934b 0%, #ff5e62 100%);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f7f7f7;
+
+  background-size: cover;
+}
+
+h1 {
+  font-family: "Playwrite GB S", cursive;
+  text-align: center;
+  padding-bottom: 1rem;
+  font-size: 3rem;
+  color: #15b392;
+}

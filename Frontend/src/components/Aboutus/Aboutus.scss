@@ -1,0 +1,134 @@
+.big-image-company{
+  width: 100%;
+}
+.content-overlay {
+  position: absolute;
+  top: 80%; /* Canh giữa theo chiều dọc */
+  left: 50%; /* Canh giữa theo chiều ngang */
+  transform: translate(-50%, -50%); /* Giúp canh giữa chính xác */
+  text-align: center; /* Canh giữa văn bản */
+  color: white;
+  z-index: 10; /* Đảm bảo nội dung nằm trên ảnh */
+}
+
+.content-overlay span {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.searchbar {
+  display: flex;
+  align-items: center;
+  border: none;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.search-box {
+  padding: 8px;
+  font-size: 16px;
+  width: 700px;
+  height : 50px;
+  border-radius: 50px;
+  outline: none;
+}
+
+.search-button {
+  height : 50px;
+  width : 125px;
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #54c392;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.search-button:hover {
+  background-color: #54c392;
+}
+.slogan {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.oustanding {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.rate {
+  width: 240px;
+  height: 70px;
+  font-size: 60px;
+  font-weight: bold;
+  font-family : 'Roboto', sans-serif;
+  color: #54c392;
+  text-align: center;
+  padding: 50px;
+}
+.rate-in4 {
+  width: 240px;
+  height: 70px;
+  font-weight: bold;
+  font-family : 'Roboto', sans-serif;
+  color: #54c392;
+  text-align: center;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.rate-detail{
+  width: 240px;
+  height: 70px;
+  font-weight: bold;
+  font-family : 'Roboto', sans-serif;
+  text-align: center;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.oustanding-in4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.oustanding-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.h3career {
+  text-align: center;
+  margin-top: 150px;
+  font-size: 30px;
+}
+.departments-list {
+  list-style-type: none;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* Tạo 4 cột có độ rộng đều nhau */
+  gap: 20px;  /* Khoảng cách giữa các cột */
+  justify-content: center;  /* Căn giữa theo chiều ngang */
+  align-items: center;
+}
+.departments-list > .departments-item {
+  padding: 30px;
+}
+.title{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.departments-item:hover{
+  border-top: 3px solid #12977a; ;
+}
+

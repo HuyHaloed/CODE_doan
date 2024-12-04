@@ -1,0 +1,70 @@
+.infoimage {
+  width: 100%;
+  height: auto;
+}
+.intro {
+    width: 70%;
+    margin-left: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    margin-top: 2rem;
+  .title-info {
+    font-size: 32px;
+    font-family: Arial, sans-serif;
+  }
+  .line1,.line2 {
+    color: silver;
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+.learn-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  .learn-more-button {
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: #54c392;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+  }
+}
+.target-posi {
+  display: flex;
+  padding: 20px;
+  gap : 10%;
+  margin-left: 15%;
+  margin-right: 15%;
+  .target,.posi {
+    text-align: center;
+    padding: 20px;
+    width: 60%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Tạo bóng mờ */
+  }
+
+}
+.motto {
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Tạo bóng mờ */
+}
+.motto-info {
+  display: flex;
+  padding: 20px;
+  gap : 20px
+}

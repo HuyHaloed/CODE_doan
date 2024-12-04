@@ -1,0 +1,90 @@
+.status-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-profile p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.user-profile button {
+  margin-left: 10px;
+  color: #ff5722;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 600px;
+}
+
+.tab {
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #666;
+}
+
+.tab.active {
+  border-bottom: 2px solid #ff5722;
+  color: #ff5722;
+  font-weight: bold;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 600px;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.order-list {
+  margin-top: 20px;
+  width: 100%;
+  height: 400px; /* Điều chỉnh chiều cao theo nhu cầu */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.order-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-list table th,
+.order-list table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.order-list p {
+  font-size: 18px;
+  color: #888;
+  text-align: center;
+}

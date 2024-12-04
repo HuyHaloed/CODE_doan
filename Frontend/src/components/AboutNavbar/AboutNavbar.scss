@@ -1,0 +1,63 @@
+.header-about {
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  position: sticky;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+.container {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+  background-color: white;
+
+}
+.logo {
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: auto;
+  margin-left: 50px;
+}
+
+.logo-button {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo-image {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.tab {
+  display: flex;
+  justify-content: space-evenly;
+  gap : 250px;
+
+}
+
+.nav-tab {
+  text-decoration: none;
+  color: #000;  /* Màu sắc cho các liên kết */
+  font-weight: bold;
+  font-size: 16px;
+}
+.visited-link {
+  color: #12977a;
+}
+.nav-tab:hover {
+  color: #12977a;  /* Text color on hover */
+}

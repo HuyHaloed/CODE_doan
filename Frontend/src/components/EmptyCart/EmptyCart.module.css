@@ -1,0 +1,35 @@
+.emptyCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.emptyCart p {
+  font-weight: 500;
+  color: #666;
+}
+
+.shopNowButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #15b392;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 2px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  font-weight: 500;
+}
+
+.shopNowButton:hover {
+  background-color: #12977a;
+}
+
+.bag {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+}

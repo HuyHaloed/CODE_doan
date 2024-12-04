@@ -1,0 +1,202 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  padding-top: 85px;
+}
+
+.container {
+  text-align: center;
+  background-color: #fbfbfb;
+  padding: 30px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.nav {
+  color: #777;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #15b392;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+
+.productInfo {
+  align-content: center;
+  margin-left: 300px;
+  margin-right: 300px;
+  display: flex;
+  background-color: #fbfbfb;
+  border-radius: 3px;
+  font-weight: 500;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.productInfo div {
+  flex: 1;
+  text-align: center;
+  align-content: center;
+  padding: 10px;
+  color: #777;
+}
+
+.productInfo div:nth-child(0) {
+  flex: 0;
+}
+
+.productInfo div:nth-child(1) {
+  flex: 3;
+  color: #303030;
+  text-align: left;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+.selectAllCheckbox {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+  box-shadow: inset 0 2px 0 0 rgba(0, 0, 0, 0.02);
+  height: 16px;
+  width: 16px;
+  margin-left: 16px;
+}
+
+.button {
+  padding: 8px 12px;
+  background-color: #15b392;
+  color: #fbfbfb;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #12977a;
+}
+
+.coupon {
+  margin-left: 300px;
+  margin-right: 300px;
+  display: flex;
+  background-color: #fbfbfb;
+  border-radius: 3px;
+  font-weight: 500;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+  padding: 10px 20px;
+  margin-bottom: 2px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.voucherGroup {
+  display: flex;
+  align-items: center;
+  margin-right: 28px;
+}
+
+.voucher {
+  padding: 8px;
+  margin-bottom: 2px;
+}
+
+.icon {
+  color: #15b392;
+}
+
+.voucherButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #0f866d;
+  font-size: 0.9rem;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input {
+  width: calc(100% - 80px);
+  padding: 10px;
+  margin-right: 2px;
+  flex: 1;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #a8a8a8;
+  box-shadow: 0 0 4px rgba(160, 160, 160, 0.5);
+}
+
+.applyButton {
+  padding: 10px;
+  white-space: nowrap;
+  background-color: #15b392;
+  color: #fbfbfb;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.applyButton:hover {
+  background-color: #12977a;
+}
+
+.voucherList {
+  margin-top: 20px;
+  max-height: 150px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.voucherItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.voucherCode {
+  font-weight: 600;
+}
+
+.voucherDescription {
+  color: #555;
+}
+.productImage {
+  width: 50px;
+  height: 50px;
+  margin-left: 6px;
+  object-fit: cover;
+}
+.productName {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  color: #303030;
+}

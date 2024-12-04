@@ -1,0 +1,171 @@
+.shopInfo {
+  display: flex;
+  align-items: center;
+  margin-left: 300px;
+  margin-right: 300px;
+  background-color: #fbfbfb;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+  padding: 15px 10px;
+  margin-bottom: 2px;
+  margin-top: 12px;
+}
+
+.shopCheckbox {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+  box-shadow: inset 0 2px 0 0 rgba(0, 0, 0, 0.02);
+  height: 16px;
+  width: 16px;
+  margin-left: 16px;
+  margin-right: 8px;
+}
+
+.shopInfo span {
+  font-weight: 500;
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.shopCategory {
+  padding: auto;
+  border: none;
+  background-color: #15b392;
+  color: #fbfbfb;
+  height: 16px;
+  width: 64px;
+  margin-left: 12px;
+  margin-right: 8px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 450;
+}
+
+.productDetail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  margin-left: 300px;
+  margin-right: 300px;
+  background-color: #fbfbfb;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+  padding: 10px 0;
+  margin-bottom: 2px;
+}
+
+.productDetail div {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+}
+
+.productDetail div:nth-child(1) {
+  flex: 0;
+}
+
+.productDetail div:nth-child(2) {
+  flex: 3;
+}
+
+.productName {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  color: #303030;
+}
+
+.productCheckbox {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+  box-shadow: inset 0 2px 0 0 rgba(0, 0, 0, 0.02);
+  height: 16px;
+  width: 16px;
+  margin-left: 16px;
+  margin-right: 8px;
+}
+
+.productImage {
+  width: 50px;
+  height: 50px;
+  margin-left: 6px;
+  object-fit: cover;
+}
+
+.productName span {
+  flex-grow: 1;
+  margin-left: 24px;
+  white-space: normal;
+  /* flex-wrap: wrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.quantityInput {
+  width: 50px;
+  padding: 5px 10px;
+  text-align: center;
+  border: 1px solid #cccccc;
+  outline: none;
+}
+
+.quantityInput:focus {
+  border-color: #15b392;
+}
+
+.subButton,
+.plusButton {
+  padding: 5px 12px;
+  border: 1px solid #cccccc;
+  cursor: pointer;
+  background-color: #fbfbfb;
+}
+
+.subButton {
+  border-right: none;
+}
+
+.plusButton {
+  border-left: none;
+}
+
+.productActions {
+  display: flex;
+  justify-content: center;
+}
+
+.actionButton {
+  padding: 8px 12px;
+  background-color: #15b392;
+  color: #fbfbfb;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.actionButton:hover {
+  background-color: #12977a;
+}
+
+.productPrice,
+.productTotal,
+.productActions {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+}
+
+.productQuantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconify {
+  color: #15b392;
+  font-size: 1.4rem;
+  margin-left: 8px;
+  cursor: pointer;
+}
