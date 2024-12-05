@@ -90,14 +90,6 @@ export async function deleteRow(table, conditions) {
     });
   });
 }
-
-
-
-
-
-
-
-
 //..................................Các hàm query xài cho cart: sẽ fix sau...............
 
 export async function excuteQuery2(query) {

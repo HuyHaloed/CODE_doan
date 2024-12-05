@@ -78,6 +78,12 @@ async function getProductInCart2(cartId) {
   return products;
 }
 
+async function updateProductCheckedStatus(cart_id, product_id, checked) {
+  const data = { checked };
+  const where = { cart_id, product_id };
+
+  return await updateRow2('cart_product', data, where);
+}
 
 export const CartModel = {
   createCart,
@@ -87,5 +93,6 @@ export const CartModel = {
   updateProductQuantity,
   removeProductFromCart,
   getProductsInCart,
-  getProductInCart2
+  getProductInCart2,
+  updateProductCheckedStatus
 };

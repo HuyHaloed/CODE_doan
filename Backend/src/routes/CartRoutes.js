@@ -9,5 +9,5 @@ router.post('/add', CartController.addProducttoCart);
 router.put('/update-quantity', CartController.updateQuantity);
 router.delete('/remove', CartController.removeProduct);
 router.get('/total/:buyer_id', CartController.getTotal);
-
+router.post('/checked', CartController.getChecked);
 export const CartRoutes = router;

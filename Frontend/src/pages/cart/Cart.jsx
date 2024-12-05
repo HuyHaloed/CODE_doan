@@ -14,15 +14,11 @@ function Cart() {
   const { cart, updateCart } = useProducts();
   const [products, setProducts] = useState(cart);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     const checkLoginStatus = () => {
       const isLoggedIn = sessionStorage.getItem("isLoggedIn");
-      setIsLoggedIn(isLoggedIn);
-
       if (isLoggedIn) {
 
         const fetchUserData = async () => {
@@ -46,7 +42,7 @@ function Cart() {
 
         fetchUserData();
       } else {
-        setProducts([]); // Nếu chưa đăng nhập thì giỏ hàng trống
+        setProducts([]); 
       }
     };
 
@@ -61,13 +57,27 @@ function Cart() {
     setIsModalOpen(false);
   };
 
-  const handleQuantityChange = (id, newQuantity) => {
-    setProducts((prevProducts) =>
-      prevProducts.map((product) =>
-        product.id === id ? { ...product, quantity: newQuantity } : product
-      )
-    );
+  const handleQuantityChange = async (id, newQuantity) => {
+    try {
+      const response = await axios.put('http://localhost:8000/api/cart/update-quantity', {
+        buyer_id: userData.id,
+        product_id: id,
+        quantity: newQuantity
+      });
+      if (response.status === 200) {
+        setProducts((prevProducts) =>
+          prevProducts.map((product) =>
+            product.id === id ? { ...product, quantity: newQuantity } : product
+          )
+        );
+      } else {
+        console.error("Failed to update quantity:", response.data);
+      }
+    } catch (error) {
+      console.error("Error updating quantity:", error);
+    }
   };
+  
 
   useEffect(() => {
     updateCart(products);
@@ -79,31 +89,48 @@ function Cart() {
     );
   };
 
-  const handleCheck = (id) => {
-    setProducts((prevProducts) =>
-      prevProducts.map((product) =>
-        product.id === id ? { ...product, checked: !product.checked } : product
-      )
-    );
+  const handleCheck = async (id) => {
+    try {
+      const response = await axios.post('http://localhost:8000/api/cart/checked', {
+        buyer_id: userData.id,
+        product_id: id,     
+      });
+  
+      if (response.status === 200) {
+        const { checked } = response.data;
+        setProducts((prevProducts) =>
+          prevProducts.map((product) =>
+            product.id === id ? { ...product, checked } : product
+          )
+        );
+      } else {
+        console.error('Failed to toggle checked status:', response.data);
+      }
+    } catch (error) {
+      console.error('Error toggling checked status:', error);
+    }
   };
 
   const handleShopCheck = (shopName) => {
-    setProducts((prevProducts) =>
-      prevProducts.map((product) =>
-        product.shopName === shopName
-          ? { ...product, checked: !product.checked }
-          : product
-      )
-    );
+    const shopProducts = products.filter((product) => product.shopName === shopName);
+    shopProducts.forEach((product) => {
+      if (!product.checked) {
+        handleCheck(product.id);  
+      }
+    });
   };
-
+  
   const handleCheckAll = (event) => {
     const isChecked = event.target.checked;
-    setProducts((prevProducts) =>
-      prevProducts.map((product) => ({ ...product, checked: isChecked }))
-    );
+    products.forEach((product) => {
+      if (product.checked !== isChecked) {
+        handleCheck(product.id); 
+      }
+    });
   };
-  console.log({products});
+  
+  
+  
   
 
   const totalPrice = products ?  products.reduce(

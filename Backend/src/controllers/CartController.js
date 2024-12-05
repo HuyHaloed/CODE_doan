@@ -114,11 +114,40 @@ async function getProductsInCart(req, res) {
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error.message });
   }
 }
+
+async function getChecked(req, res) {
+  const { buyer_id, product_id } = req.body;
+  try {
+    const cart = await CartModel.getCartIDbyBuyerID(buyer_id);
+    if (!cart) {
+      return res.status(StatusCodes.NOT_FOUND).json({ error: 'Cart not found for this buyer' });
+    }
+
+    const cart_id = cart.id;
+    const existingProduct = await CartModel.getProductInCart(cart_id, product_id);
+    if (!existingProduct) {
+      return res.status(StatusCodes.NOT_FOUND).json({ error: 'Product not found in the cart' });
+    }
+    const newCheckedStatus = existingProduct.checked === 1 ? 0 : 1;
+    await CartModel.updateProductCheckedStatus(cart_id, product_id, newCheckedStatus);
+
+    res.status(StatusCodes.OK).json({
+      message: 'Checked status updated successfully',
+      product_id,
+      checked: newCheckedStatus,
+    });
+  } catch (error) {
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error.message });
+  }
+}
+
+
 export const CartController = {
   getCartIDbyBuyerID,
   addProducttoCart,
   updateQuantity,
   removeProduct,
   getTotal,
-  getProductsInCart
+  getProductsInCart,
+  getChecked
 };
