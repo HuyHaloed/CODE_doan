@@ -99,10 +99,26 @@ async function getTotal(req, res) {
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error.message });
   }
 }
+
+async function getProductsInCart(req, res) {
+  const { buyer_id } = req.body;
+  try {
+    const cart = await CartModel.getCartIDbyBuyerID(buyer_id);
+    if (!cart) {
+      return res.status(StatusCodes.NOT_FOUND).json({ error: 'Cart not found for this buyer' });
+    }
+    const cart_id = cart.id;
+    const products = await CartModel.getProductInCart2(cart_id);
+    res.status(StatusCodes.OK).json(products);
+  } catch (error) {
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error.message });
+  }
+}
 export const CartController = {
   getCartIDbyBuyerID,
   addProducttoCart,
   updateQuantity,
   removeProduct,
-  getTotal
+  getTotal,
+  getProductsInCart
 };

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 02, 2024 lúc 07:34 PM
+-- Thời gian đã tạo: Th12 05, 2024 lúc 05:25 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -63,6 +63,7 @@ CREATE TABLE `buyers` (
 --
 
 INSERT INTO `buyers` (`user_id`) VALUES
+('e7ae9a95-2112-4396-a8a3-8a674f1877fa'),
 ('user1'),
 ('user3');
 
@@ -71,7 +72,6 @@ INSERT INTO `buyers` (`user_id`) VALUES
 --
 -- Cấu trúc bảng cho bảng `carts`
 --
-
 CREATE TABLE `carts` (
   `id` varchar(36) NOT NULL,
   `buyer_id` varchar(36) NOT NULL
@@ -82,6 +82,7 @@ CREATE TABLE `carts` (
 --
 
 INSERT INTO `carts` (`id`, `buyer_id`) VALUES
+('cart1733341880390', 'e7ae9a95-2112-4396-a8a3-8a674f1877fa'),
 ('cart1733153953092', 'user1'),
 ('cart1', 'user3');
 
@@ -103,8 +104,14 @@ CREATE TABLE `cart_product` (
 
 INSERT INTO `cart_product` (`cart_id`, `product_id`, `quantity`) VALUES
 ('cart1', '9fa7a00d-afef-11ef-b2c3-74d4dd0c2a47', 2),
+('cart1', '9fa80770-afef-11ef-b2c3-74d4dd0c2a47', 100),
 ('cart1', 'prod1', 3),
-('cart1', 'prod2', 5);
+('cart1', 'prod2', 5),
+('cart1733341880390', '9fa80770-afef-11ef-b2c3-74d4dd0c2a47', 110),
+('cart1733341880390', '9fa808e9-afef-11ef-b2c3-74d4dd0c2a47', 7),
+('cart1733341880390', '9fa80c14-afef-11ef-b2c3-74d4dd0c2a47', 1),
+('cart1733341880390', 'b1ce9a37-aff0-11ef-b2c3-74d4dd0c2a47', 100),
+('cart1733341880390', 'b1cece3f-aff0-11ef-b2c3-74d4dd0c2a47', 3);
 
 -- --------------------------------------------------------
 
@@ -388,20 +395,24 @@ CREATE TABLE `users` (
   `email` varchar(100) NOT NULL,
   `phone_number` varchar(20) DEFAULT NULL,
   `bank_name` varchar(100) DEFAULT NULL,
-  `account_number` varchar(50) DEFAULT NULL
+  `account_number` varchar(50) DEFAULT NULL,
+  `role` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `password`, `email`, `phone_number`, `bank_name`, `account_number`) VALUES
-('ad600d7f-afee-11ef-b2c3-74d4dd0c2a47', 'Nguyen Van A', 'password123', 'a.nguyen@example.com', '0123456789', 'Vietcombank', '123456789'),
-('ad606f2b-afee-11ef-b2c3-74d4dd0c2a47', 'Tran Thi B', 'password456', 'b.tran@example.com', '0987654321', 'Techcombank', '987654321'),
-('ad607fb1-afee-11ef-b2c3-74d4dd0c2a47', 'Le Van C', 'password789', 'c.le@example.com', '0321654987', 'BIDV', '456123789'),
-('user1', 'Alice Smith', 'password123', 'alice@example.com', '1234567890', 'Bank A', '123456789'),
-('user2', 'Bob Johnson', 'password123', 'bob@example.com', '0987654321', 'Bank B', '987654321'),
-('user3', 'Charlie Brown', 'password123', 'charlie@example.com', '1122334455', 'Bank C', '456789123');
+INSERT INTO `users` (`id`, `name`, `password`, `email`, `phone_number`, `bank_name`, `account_number`, `role`) VALUES
+('3c8be0d4-3a58-46b9-bb3b-466aa77de783', 'user1', '$2a$10$.tuZDMmQ3kFxWyWDEj3tP.KU6EpZGj2wpaaPvlpfW5EzGGnhgDrze', 'huy.dang9999haloed@hcmut.edu.vn', NULL, NULL, NULL, NULL),
+('747b147e-0fb8-4122-aa75-002694ee7ebd', 'user1', '$2a$10$1dX5zc0Tbje6UB7OTSstCO8eP80Mma16isBP0jS9sKT3ZFgHAu5E6', 'xuanhuy6a1@gmail.com', NULL, NULL, NULL, NULL),
+('ad600d7f-afee-11ef-b2c3-74d4dd0c2a47', 'Nguyen Van A', 'password123', 'a.nguyen@example.com', '0123456789', 'Vietcombank', '123456789', NULL),
+('ad606f2b-afee-11ef-b2c3-74d4dd0c2a47', 'Tran Thi B', 'password456', 'b.tran@example.com', '0987654321', 'Techcombank', '987654321', NULL),
+('ad607fb1-afee-11ef-b2c3-74d4dd0c2a47', 'Le Van C', 'password789', 'c.le@example.com', '0321654987', 'BIDV', '456123789', NULL),
+('e7ae9a95-2112-4396-a8a3-8a674f1877fa', 'Huy', '$2a$10$tSmDjtCNrcfeM6CJe0gRu.41nBafkUlUQEtcrtPKlZMA.gsW2hML2', 'xuanhaloed@gmail.com', '0857777771', NULL, NULL, 'BUYER'),
+('user1', 'Alice Smith', 'password123', 'alice@example.com', '1234567890', 'Bank A', '123456789', NULL),
+('user2', 'Bob Johnson', 'password123', 'bob@example.com', '0987654321', 'Bank B', '987654321', NULL),
+('user3', 'Charlie Brown', 'password123', 'charlie@example.com', '1122334455', 'Bank C', '456789123', NULL);
 
 --
 -- Chỉ mục cho các bảng đã đổ

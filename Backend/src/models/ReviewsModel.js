@@ -1,9 +1,9 @@
-import { getOne, insertSingleRow, updateRow, deleteRow, getAll } from '~/database/query';
+import { getOne, insertSingleRow, updateRow, deleteRow } from '~/database/query';
 // import { connection } from '~/config/connectDatabase';
 
 
 async function getReviews(buyer_id) {
-  let reviews = await getAll('reviews', { buyer_id } )
+  let reviews = await getOne('reviews', 'buyer_id', buyer_id)
     .then((rows) => {
       return rows;
     })
@@ -36,19 +36,10 @@ async function deleteReview(buyer_id, product_id, order_id) {
   return await deleteRow('reviews', conditions);
 }
 
-async function getReviewsByRate(rate) {
-  try {
-    const reviews = await getAll('reviews', { rate });
-    return reviews;
-  } catch (error) {
-    throw new Error(`Lỗi khi lấy nhận xét với rate ${rate}: ${error.message}`);
-  }
-}
 export const ReviewsModel = {
   getReviews,
   createReviews,
   updateReview,
   deleteReview,
-  getOrderById,
-  getReviewsByRate
+  getOrderById
 };

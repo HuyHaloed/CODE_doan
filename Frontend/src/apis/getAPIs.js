@@ -26,6 +26,6 @@ export const getSellerHomePage = async () => {
 
 export const getUserData = async () => {  
   const response = await axiosInstance.get(`/user`);
-
+  console.log(response.data);
   return response.data; 
 }

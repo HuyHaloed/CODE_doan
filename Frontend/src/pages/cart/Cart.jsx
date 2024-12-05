@@ -1,18 +1,57 @@
 import CartSummary from "../../components/CartSummary/CartSummary";
 import ModalBox from "../../components/ModalBox/ModalBox";
-
+import axios from "axios";
 import styles from "./Cart.module.css";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import EmptyCart from "../../components/EmptyCart/EmptyCart";
 import { mockVouchers } from "../../apis/mock-data";
 import ProductInfo from "../../components/ProductInfo/ProductInfo";
 import { useProducts } from "../../contexts/ProductContext";
+import { getUserData } from "../../apis/getAPIs";
 
 function Cart() {
   const { cart, updateCart } = useProducts();
   const [products, setProducts] = useState(cart);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const checkLoginStatus = () => {
+      const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+      setIsLoggedIn(isLoggedIn);
+
+      if (isLoggedIn) {
+
+        const fetchUserData = async () => {
+          try {
+
+            const response = await getUserData();
+            setUserData(response);
+
+            console.log(response.id);
+            const fetchCart = async () => {
+              const cartResponse = await axios.post('http://localhost:8000/api/cart/products', {
+                buyer_id: response.id
+              });
+              setProducts(cartResponse.data);
+            };
+            fetchCart();
+          } catch (error) {
+            console.error("Error fetching user data:", error);
+          }
+        };
+
+        fetchUserData();
+      } else {
+        setProducts([]); // Nếu chưa đăng nhập thì giỏ hàng trống
+      }
+    };
+
+    checkLoginStatus();
+  }, []);
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -64,12 +103,14 @@ function Cart() {
       prevProducts.map((product) => ({ ...product, checked: isChecked }))
     );
   };
+  console.log({products});
+  
 
-  const totalPrice = products.reduce(
+  const totalPrice = products ?  products.reduce(
     (total, product) =>
       total + (product.checked ? product.price * product.quantity : 0),
     0
-  );
+  ) : 0;
   const shippingFee = 30000;
 
   const handleCheckout = () => {

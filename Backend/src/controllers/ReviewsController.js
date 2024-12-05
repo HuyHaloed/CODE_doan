@@ -68,35 +68,10 @@ async function deleteReview(req, res) {
   }
 }
 
-async function getReviewByRate(req, res) {
-  const { rate } = req.params;
-
-  if (isNaN(rate) || rate < 1 || rate > 5) {
-    return res.status(StatusCodes.BAD_REQUEST).json({
-      error: 'Rate phải là số và nằm trong khoảng từ 1 đến 5.',
-    });
-  }
-
-  try {
-    const reviews = await ReviewsModel.getReviewsByRate(rate);
-
-    if (reviews.length === 0) {
-      return res.status(StatusCodes.NOT_FOUND).json({
-        message: `Không tìm thấy nhận xét với rating ${rate}`,
-      });
-    }
-    res.status(StatusCodes.OK).json(reviews);
-  } catch (error) {
-    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-      error: `Lỗi khi lấy nhận xét: ${error.message}`,
-    });
-  }
-}
 
 export const ReviewsController = {
   getReviews,
   createReview,
   updateReview,
-  deleteReview,
-  getReviewByRate
+  deleteReview
 };

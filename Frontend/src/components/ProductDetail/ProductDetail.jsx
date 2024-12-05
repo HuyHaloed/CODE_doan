@@ -18,7 +18,6 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
   const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
@@ -35,24 +34,38 @@ const ProductDetail = () => {
 
     fetchUser();
   }, [])
+  
   const handleAddToCart = async () => {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+    console.log(userData);
     
     if (!isLoggedIn) {
       navigate('/login');
       return;
     }
-// cart/add
+  
     try {
       if (isLoggedIn) {
-        addToCart({ ...product, quantity });
-        setShowPopup(true);
-        setTimeout(() => {
-          setShowPopup(false);
-        }, 1000);
+        const buyerId = userData.id;
+        const response = await axios.post(
+          'http://localhost:8000/api/cart/add',
+          {
+            buyer_id: buyerId,
+            product_id: product.id,
+            quantity: quantity,
+          }
+        );
+        console.log(product.id);
+        if (response.status === 201) {
+          addToCart({ ...product, quantity });
+          setShowPopup(true);
+          setTimeout(() => {
+            setShowPopup(false);
+          }, 1000);
+        }
       }
-      // navigate('/cart');
     } catch (error) {
+      console.error('Error adding product to cart:', error);
       navigate('/login');
     }
   };

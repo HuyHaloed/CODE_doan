@@ -7,6 +7,7 @@ import { CouponRoutes } from '~/routes/CouponRoutes';
 import { PaymentRoutes } from '~/routes/PaymentRoutes';
 import { AuthRoutes } from './AuthRoutes';
 import { UserRoutes } from './UserRoutes';
+
 const router = express.Router();
 
 router.use('/auth', AuthRoutes);
@@ -16,6 +17,6 @@ router.use('/cart', CartRoutes);
 router.use('/reviews', ReviewsRoutes);
 router.use('/coupon', CouponRoutes);
 router.use('/payment', PaymentRoutes);
-router.use('/', UserRoutes);
+router.use('/user', UserRoutes);
 
 export const API = router;

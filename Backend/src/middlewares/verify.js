@@ -34,12 +34,13 @@ export const authentication = async (req, res, next) => {
           .json({ message: 'This session has expired. Please login' });
       }
 
-
       const { id } = decoded;
       const user = await getOne('users', 'id', id);
       // eslint-disable-next-line no-unused-vars
-      const { password, ...data } = user;
+      const { password, ...data } = user[0];
+
       req.user = data;
+
       next();
     });
   } catch (err) {
